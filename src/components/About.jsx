@@ -1,15 +1,6 @@
-"use client"
-
-import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -56,7 +47,8 @@ const About = () => {
         <motion.div
           className="max-w-4xl mx-auto"
           initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
           variants={staggerChildren}
         >
           {/* Header */}
@@ -73,12 +65,18 @@ const About = () => {
             <motion.div
               className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-400 mx-auto mt-8"
               initial={{ width: 0 }}
-              animate={{ width: "6rem", transition: { delay: 0.6, duration: 0.8 } }}
+              whileInView={{ width: "6rem" }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.8 }}
             />
           </motion.div>
 
           {/* My Story Section */}
-          <motion.div className="mb-20" variants={staggerChildren}>
+          <motion.div 
+            className="mb-20" 
+            variants={staggerChildren}
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <motion.h2
               className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-teal-500 to-teal-400 bg-clip-text text-transparent"
               variants={fadeIn}
@@ -102,7 +100,12 @@ const About = () => {
           </motion.div>
 
           {/* Timeline Section */}
-          <motion.div variants={timelineVariants}>
+          <motion.div 
+            variants={timelineVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <motion.h2
               className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-teal-400 bg-clip-text text-transparent"
               variants={fadeIn}
@@ -115,7 +118,9 @@ const About = () => {
               <motion.div
                 className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-gradient-to-b from-teal-500 to-teal-400"
                 initial={{ height: 0 }}
-                animate={{ height: "100%", transition: { delay: 0.5, duration: 1.5 } }}
+                whileInView={{ height: "100%" }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 1.5 }}
               />
 
               {/* Timeline items */}
@@ -139,6 +144,7 @@ const About = () => {
                   <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0 md:text-left" />
                 </motion.div>
 
+                {/* Timeline items continued... */}
                 {/* 2021 */}
                 <motion.div
                   className="relative flex flex-col md:flex-row items-center md:items-start"
@@ -200,7 +206,13 @@ const About = () => {
           </motion.div>
 
           {/* Values Section */}
-          <motion.div className="mt-24" variants={staggerChildren}>
+          <motion.div 
+            className="mt-24" 
+            variants={staggerChildren}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
             <motion.h2
               className="text-3xl font-bold mb-12 text-center bg-gradient-to-r from-teal-500 to-teal-400 bg-clip-text text-transparent"
               variants={fadeIn}
@@ -296,7 +308,9 @@ const About = () => {
           <motion.div
             className="mt-24 text-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 1.5, duration: 0.8 } }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5, duration: 0.8 }}
           >
             <h2 className="text-2xl font-bold mb-6">Interested in working together?</h2>
             <motion.a
