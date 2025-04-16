@@ -60,7 +60,7 @@ const About = () => {
               About Me
             </motion.h1>
             <motion.p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto" variants={fadeIn}>
-              My journey from Java programming to web development, hackathons, and community leadership
+                My journey from C++ programming to web development, hackathons, competitive programming, and building impactful digital solutions that solve real-world problems.
             </motion.p>
             <motion.div
               className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-400 mx-auto mt-8"
@@ -85,12 +85,15 @@ const About = () => {
             </motion.h2>
             <motion.div className="space-y-6 text-gray-700 dark:text-gray-300" variants={staggerChildren}>
               <motion.p className="text-lg" variants={fadeIn}>
-                I'm a passionate developer with a strong foundation in frontend and backend technologies. My journey
-                started with Java in high school, sparking my interest in software development.
+                I'm a passionate developer and problem-solver with expertise across the full stack. My journey 
+                began with C++ in high school, where I quickly discovered my fascination with turning logic into 
+                functional applications that could solve real-world challenges.
               </motion.p>
               <motion.p className="text-lg" variants={fadeIn}>
-                I later discovered web development, diving into modern frameworks and participating in hackathons to
-                solve real-world problems.
+                My passion for programming evolved when I discovered web development. I immersed myself in React, Next.js,
+                and Node.js ecosystems, while sharpening my skills through competitive programming challenges. This 
+                combination of frontend creativity and algorithmic thinking has been my strength in hackathons, where 
+                I've built solutions for healthcare, education, and accessibility needs.
               </motion.p>
               <motion.p className="text-lg" variants={fadeIn}>
                 Today, I focus on creating intuitive, performant web applications while contributing to open-source
@@ -131,9 +134,9 @@ const About = () => {
                   variants={timelineItemVariants}
                 >
                   <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="text-xl font-bold mb-2">Started Learning Java</h3>
+                    <h3 className="text-xl font-bold mb-2">Started Learning Python</h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Began my programming journey with Java in high school
+                      Began my programming journey with Python in high school
                     </p>
                   </div>
                   <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 z-10 order-1 md:order-2">
@@ -153,13 +156,13 @@ const About = () => {
                   <div className="md:w-1/2 md:pr-12 order-2 md:order-1 mt-6 md:mt-0 md:text-right" />
                   <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 z-10 order-1 md:order-2">
                     <div className="w-10 h-10 rounded-full bg-teal-500 border-4 border-white dark:border-gray-900 flex items-center justify-center">
-                      <span className="text-xs font-bold text-white">2021</span>
+                      <span className="text-xs font-bold text-white">2022</span>
                     </div>
                   </div>
                   <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
                     <h3 className="text-xl font-bold mb-2">Web Development</h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Expanded skills to include HTML, CSS, JavaScript and modern frameworks
+                      Expanded skills to include HTML, CSS, JavaScript, DSA, Compititive Programing and modern frameworks
                     </p>
                   </div>
                 </motion.div>
@@ -170,9 +173,9 @@ const About = () => {
                   variants={timelineItemVariants}
                 >
                   <div className="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="text-xl font-bold mb-2">Hackathon Success</h3>
+                    <h3 className="text-xl font-bold mb-2">Successes</h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Participated in and won multiple hackathons including Smart India Hackathon
+                      Participated in and won multiple hackathons, secured 3 digit rank in Codeforces and LeetCode.
                     </p>
                   </div>
                   <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 z-10 order-1 md:order-2">
@@ -195,9 +198,9 @@ const About = () => {
                     </div>
                   </div>
                   <div className="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
-                    <h3 className="text-xl font-bold mb-2">Community Leadership</h3>
+                    <h3 className="text-xl font-bold mb-2">Improvements</h3>
                     <p className="text-gray-700 dark:text-gray-300">
-                      Led tech communities and organized events like Webytes and Verge 2025
+                      learning advance DSA, technologies, and frameworks, contributing to open-source projects, and mentoring others.
                     </p>
                   </div>
                 </motion.div>

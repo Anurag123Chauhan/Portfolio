@@ -6,9 +6,9 @@ import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import DevelopmentExperience from './components/development-experience';
+// import DevelopmentExperience from './components/development-experience';
 import Achievements from './components/Achievements';
-import CommunityInvolvement from './components/community-involvement';
+// import CommunityInvolvement from './components/community-involvement';
 
 // Wrapper component to handle scroll to section when URL changes
 const ScrollToSection = () => {
@@ -47,11 +47,11 @@ const App = () => {
           <section id="Projects">
             <Projects />
           </section>
-          <DevelopmentExperience />
+          {/* <DevelopmentExperience /> */}
           <section id="Achievements">
             <Achievements />
           </section>
-          <CommunityInvolvement />
+          {/* <CommunityInvolvement /> */}
           <section id="Contact">
             <Contact />
           </section>

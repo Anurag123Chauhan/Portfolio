@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Trophy, Award, Medal } from "lucide-react"
+import RankImg from "../assets/rank.jpeg"
+import InfImg from "../assets/infinion.jpeg"
 
 const Achievements = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -44,37 +46,37 @@ const Achievements = () => {
   const achievements = [
     {
       id: 1,
-      title: "Smart India Hackathon 2024 Winner",
-      description: "Won the prestigious Smart India Hackathon 2024 with an innovative solution for PSID - SIH1618.",
-      image: "/placeholder.svg?height=400&width=600",
+      title: "Rankings in different platforms",
+      description: "Ranked amongst to 200 in CodeChef, Ranked amongst to 800 in LeetCode, and specilist in codeforces.",
+      image: RankImg,
       icon: <Trophy className="h-6 w-6 text-yellow-500" />,
-      hasMore: true,
-    },
-    {
-      id: 2,
-      title: "Final Round of SRM Builds 4.0",
-      description: "Reached the final round of SRM Builds 4.0 with a high-impact project in the innovation category.",
-      image: "/placeholder.svg?height=400&width=600",
-      icon: <Award className="h-6 w-6 text-purple-500" />,
       hasMore: false,
     },
     {
-      id: 3,
-      title: "2nd Prize - Documentary Making Competition",
-      description: "Secured 2nd place in the documentary-making competition held by the Environmental Department.",
-      image: "/placeholder.svg?height=400&width=600",
-      icon: <Medal className="h-6 w-6 text-teal-500" />,
-      hasMore: true,
+      id: 2,
+      title: "Final Round of Infinion hackathon",
+      description: "Reached the final round of Infinion hackathon with a high-impact project in the innovation category.",
+      image: InfImg,
+      icon: <Award className="h-6 w-6 text-purple-500" />,
+      hasMore: false,
     },
-    {
-      id: 4,
-      title: "3rd Prize - Apogee 2025 BITS Pilani",
-      description:
-        "Achieved 3rd place in the Moneyball event at Apogee 2025, showcasing analytical and financial skills.",
-      image: "/placeholder.svg?height=400&width=600",
-      icon: <Award className="h-6 w-6 text-blue-500" />,
-      hasMore: true,
-    },
+    // {
+    //   id: 3,
+    //   title: "2nd Prize - Documentary Making Competition",
+    //   description: "Secured 2nd place in the documentary-making competition held by the Environmental Department.",
+    //   image: "/placeholder.svg?height=400&width=600",
+    //   icon: <Medal className="h-6 w-6 text-teal-500" />,
+    //   hasMore: true,
+    // },
+    // {
+    //   id: 4,
+    //   title: "3rd Prize - Apogee 2025 BITS Pilani",
+    //   description:
+    //     "Achieved 3rd place in the Moneyball event at Apogee 2025, showcasing analytical and financial skills.",
+    //   image: "/placeholder.svg?height=400&width=600",
+    //   icon: <Award className="h-6 w-6 text-blue-500" />,
+    //   hasMore: true,
+    // },
   ]
 
   return (

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import resumePdf from "../assets/resume.pdf"; 
+import profileImage from "../assets/my_image.jpg";
 
 const Home = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -86,7 +87,7 @@ const Home = () => {
             className="inline-block bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6"
             variants={fadeIn}
           >
-            <span className="text-sm font-medium">Web Developer & Tech Enthusiast</span>
+            <span className="text-sm font-medium">Developer & Tech Enthusiast</span>
           </motion.div>
 
           <motion.h1 className="text-5xl md:text-7xl font-bold mb-4" variants={fadeIn}>
@@ -101,8 +102,7 @@ const Home = () => {
           </motion.h2>
 
           <motion.p className="text-gray-700 dark:text-gray-300 text-lg max-w-lg mb-8" variants={fadeIn}>
-            A passionate full-stack developer specializing in creating innovative web solutions and contributing to open
-            source.
+            A passionate developer specializing in problem solving and creating innovative solutions. I love to explore new technologies and push the boundaries of what's possible in the digital world.
           </motion.p>
 
           <motion.div className="flex space-x-4 mb-10" variants={staggerChildren}>
@@ -131,7 +131,7 @@ const Home = () => {
           <motion.div className="flex space-x-4" variants={staggerChildren}>
             {/* GitHub */}
             <motion.a
-              href="#"
+              href="https://github.com/Anurag123Chauhan"
               className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400"
               variants={iconVariants}
               whileHover="hover"
@@ -153,7 +153,7 @@ const Home = () => {
 
             {/* LinkedIn */}
             <motion.a
-              href="#"
+              href="https://www.linkedin.com/in/anurag--chauhan"
               className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400"
               variants={iconVariants}
               whileHover="hover"
@@ -175,7 +175,7 @@ const Home = () => {
               </svg>
             </motion.a>
 
-            {/* Twitter/X */}
+            {/* Twitter/X
             <motion.a
               href="#"
               className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400"
@@ -195,11 +195,11 @@ const Home = () => {
               >
                 <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
               </svg>
-            </motion.a>
+            </motion.a> */}
 
             {/* Code */}
             <motion.a
-              href="#"
+              href="https://codolio.com/profile/5idR56CN"
               className="w-12 h-12 bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center text-teal-600 dark:text-teal-400"
               variants={iconVariants}
               whileHover="hover"
@@ -251,7 +251,7 @@ const Home = () => {
             <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-teal-500 p-1">
               <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-b from-teal-600 to-teal-700">
                 {/* Replace with your image */}
-                <img src="/placeholder.svg?height=400&width=400" alt="Profile" className="w-full h-full object-cover" />
+                <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

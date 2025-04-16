@@ -1,7 +1,9 @@
-"use client"
-
 import { useState, useEffect, useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import SurakshaImg from "../assets/Suraksha.jpeg"
+import WeatherImg from "../assets/Weather_app.jpeg"
+import N_queenImg from "../assets/N_queen.jpeg"
+import RayTracingImg from "../assets/RayTracing.jpeg"
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -48,72 +50,72 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Bhunidhi",
+      title: "Suraksha",
       description:
-        "A blockchain-based, ML-powered drone surveillance system for detecting unauthorized construction. Winner of Smart India Hackathon (PSID: SIH1618).",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Blockchain", "Machine Learning", "Node.js", "Drone AI"],
+        "A Disaster Management System that uses AI and maps API and chat section to provide real-time updates and resources during emergencies.",
+      image: SurakshaImg,
+      tags: ["Sockets","MongoDB", "Machine Learning", "Node.js", "Tailwind CSS"],
       links: {
-        source: "#",
+        source: "https://github.com/Anurag123Chauhan/Suraksha",
         demo: null,
       },
       category: "AI",
     },
     {
       id: 2,
-      title: "Edudoc",
+      title: "Wether_App",
       description:
-        "An online open notes-sharing platform featuring an admin panel, user moderation, and categorized educational resources.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "Node.js", "MongoDB", "Tailwind CSS", "ShadCN"],
+        "A weather application that provides real-time weather updates and forecasts using a third-party API.",
+      image: WeatherImg,
+      tags: ["Angular", "Node.js", "MongoDB", "Tailwind CSS", "Bootstrap"],
       links: {
-        source: "#",
+        source: "https://github.com/Anurag123Chauhan/PersonalPortfolio",
         demo: "#",
       },
       category: "Web",
     },
     {
       id: 3,
-      title: "Exclutch",
+      title: "N_Queen Visualizer",
       description:
-        "An upgraded version of Edudoc with added features like likes, comments, notifications, and a request forum for user interactions.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "Node.js", "MongoDB", "Sockets", "Tailwind CSS", "ShadCN"],
+        "A visualizer for the N-Queens problem, showcasing various algorithms and their performance in solving the problem.",
+      image: N_queenImg,
+      tags: ["C++"],
       links: {
-        source: "#",
+        source: "https://github.com/Anurag123Chauhan/N-Queen-Visualisation",
         demo: "#",
       },
-      category: "Web",
+      category: "C++",
     },
     {
       id: 4,
-      title: "ChatX",
+      title: "Raytracing Visualizer",
       description:
-        "A real-time chat application with direct messages and group chat functionality, built to demonstrate my expertise with sockets.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "Node.js", "Sockets", "MongoDB", "Tailwind CSS", "ShadCN"],
+        "A visualizer for raytracing algorithms, demonstrating the rendering of 2D scenes and objects using raytracing techniques.",
+      image: RayTracingImg,
+      tags: ["C++", "SDL2"],
       links: {
-        source: "#",
+        source: "https://github.com/Anurag123Chauhan/Raytracing",
         demo: "#",
       },
-      category: "Web",
+      category: "C++",
     },
-    {
-      id: 5,
-      title: "Coding Shop - Devlang",
-      description:
-        "SRM Builds 4 project where users can create and manage communities, and host online workshops in coding and development fields.",
-      image: "/placeholder.svg?height=400&width=600",
-      tags: ["Next.js", "Firebase", "Tailwind CSS", "ShadCN"],
-      links: {
-        source: "#",
-        demo: null,
-      },
-      category: "Web",
-    },
+    // {
+    //   id: 5,
+    //   title: "Coding Shop - Devlang",
+    //   description:
+    //     "SRM Builds 4 project where users can create and manage communities, and host online workshops in coding and development fields.",
+    //   image: "/placeholder.svg?height=400&width=600",
+    //   tags: ["Next.js", "Firebase", "Tailwind CSS", "ShadCN"],
+    //   links: {
+    //     source: "#",
+    //     demo: null,
+    //   },
+    //   category: "Web",
+    // },
   ]
 
-  const filters = ["All", "Web", "AI", "Mobile"]
+  const filters = ["All", "Web", "AI", "C++"]
 
   const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter)
 
@@ -189,7 +191,7 @@ const Projects = () => {
               Interested in seeing more of my work? Check out my GitHub repositories.
             </p>
             <motion.a
-              href="https://github.com/yourusername"
+              href="https://github.com/Anurag123Chauhan"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-500 rounded-full font-medium text-white"

@@ -1,14 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   })
+  const [formError, setFormError] = useState("")
   const [errors, setErrors] = useState({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -39,23 +42,35 @@ const Contact = () => {
     e.preventDefault()
     if (validateForm()) {
       setIsSubmitting(true)
+      setFormError("")
 
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false)
-        setIsSubmitted(true)
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
+      // Send email using EmailJS
+      emailjs.sendForm(
+        'service_6ytmi6b', // Your EmailJS service ID
+        'template_jc4x67p', // Your EmailJS template ID
+        form.current,
+        'QSrImzSNZIA0DwW0f' // Your EmailJS public key
+      )
+        .then((result) => {
+          console.log('Email sent successfully:', result.text)
+          setIsSubmitting(false)
+          setIsSubmitted(true)
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          })
+
+          // Reset success message after 5 seconds
+          setTimeout(() => {
+            setIsSubmitted(false)
+          }, 5000)
+        }, (error) => {
+          console.error('Failed to send email:', error.text)
+          setIsSubmitting(false)
+          setFormError('Failed to send your message. Please try again later.')
         })
-
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false)
-        }, 5000)
-      }, 1500)
     }
   }
 
@@ -158,9 +173,10 @@ const Contact = () => {
             <div className="mt-10">
               <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Connect With Me</h3>
               <div className="flex space-x-4">
-                {/* Social media links preserved as they already have good contrast in dark mode */}
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
                 >
                   <svg
@@ -174,7 +190,9 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://twitter.com/profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition-colors"
                 >
                   <svg
@@ -188,7 +206,9 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://instagram.com/profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
                 >
                   <svg
@@ -202,7 +222,9 @@ const Contact = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-blue-900 transition-colors"
                 >
                   <svg
@@ -220,7 +242,7 @@ const Contact = () => {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+            <form ref={form} onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
               {isSubmitted ? (
                 <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-4 py-3 rounded-lg mb-6">
                   <div className="flex items-center">
@@ -240,6 +262,26 @@ const Contact = () => {
                   </div>
                 </div>
               ) : null}
+              
+              {formError && (
+                <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg mb-6">
+                  <div className="flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 mr-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <p>{formError}</p>
+                  </div>
+                </div>
+              )}
 
               <div className="grid gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

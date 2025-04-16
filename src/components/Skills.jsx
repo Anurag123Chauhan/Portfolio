@@ -24,8 +24,8 @@ const Skills = () => {
   }
 
   // Define the skills in two separate arrays for two rows of sliding content
-  const skillsRow1 = ["JavaScript", "React", "Node.js", "TypeScript", "HTML/CSS", "Next.js", "Tailwind CSS", "Redux"]
-  const skillsRow2 = ["Java", "Python", "MongoDB", "SQL", "Git", "AWS", "Docker", "GraphQL"]
+  const skillsRow1 = ["JavaScript", "React", "Node.js", "TypeScript", "HTML/CSS", "Golang", "Tailwind CSS", "Angular","Express.js","Laravel", "Android"]
+  const skillsRow2 = ["Java", "Python", "C++", "Kotlin", "postgresql", "MongoDB", "SQL", "Git", "Github", "SDL2", "Figma"]
 
   return (
     <div className="py-20 bg-white dark:bg-gray-900">
