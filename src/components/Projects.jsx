@@ -63,7 +63,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Wether_App",
+      title: "Weather_App",
       description:
         "A weather application that provides real-time weather updates and forecasts using a third-party API.",
       image: WeatherImg,
