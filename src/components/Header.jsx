@@ -28,11 +28,11 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full py-4 px-6 flex items-center backdrop-blur-md bg-white/10 dark:bg-black/10">
-      <div className="flex items-center flex-shrink-0">
+      {/* <div className="flex items-center flex-shrink-0">
         <span className="text-lg font-bold text-gray-800 dark:text-white">
           Anurag Chauhan
         </span>
-      </div>
+      </div> */}
 
       <nav className="flex-grow flex justify-center items-center space-x-6">
         <Link
@@ -104,7 +104,7 @@ export default function Header() {
           </div>
         )}
       </div>
-      <div className="flex items-center ml-4">
+      {/* <div className="flex items-center ml-4">
         <a
           href={resumePdf}
           className="px-4 py-2 font-medium rounded-lg shadow-md transition-colors bg-teal-600 hover:bg-teal-700 text-white dark:bg-teal-700 dark:hover:bg-teal-600"
@@ -114,7 +114,7 @@ export default function Header() {
         >
           Resume
         </a>
-      </div>
+      </div> */}
     </header>
   );
 }

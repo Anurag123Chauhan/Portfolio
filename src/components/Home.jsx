@@ -83,12 +83,12 @@ const Home = () => {
           animate={isVisible ? "visible" : "hidden"}
           variants={staggerChildren}
         >
-          <motion.div
+          {/* <motion.div
             className="inline-block bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6"
             variants={fadeIn}
           >
             <span className="text-sm font-medium">Developer & Tech Enthusiast</span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1 className="text-5xl md:text-7xl font-bold mb-4" variants={fadeIn}>
             Hi, I'm{" "}
