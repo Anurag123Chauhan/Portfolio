@@ -60,6 +60,12 @@ export default function Header() {
           Projects
         </Link>
         <Link
+          to="/#certification"
+          className="text-m font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+        >
+          Certification
+        </Link>
+        <Link
           to="/#Achievements"
           className="text-m font-medium text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
         >

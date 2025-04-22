@@ -1,9 +1,7 @@
-"use client"
-
 import { useState, useRef, useEffect } from "react"
 import { motion, useAnimationControls, useInView } from "framer-motion"
 
-const ImprovedSkillsSlider = ({ skills = [], direction = "left", speed = 25, className = "" }) => {
+const ImprovedSkillsSlider = ({ skills = [], direction = "left", speed = 20, className = "" }) => {
   const containerRef = useRef(null)
   const isInView = useInView(containerRef, { once: false, amount: 0.1 })
   const controls = useAnimationControls()
@@ -11,7 +9,7 @@ const ImprovedSkillsSlider = ({ skills = [], direction = "left", speed = 25, cla
   
   // Store animation state
   const animationRef = useRef({
-    startTime: 0,
+    startTime: -1,
     pausedAt: 0,
     pauseOffset: 0,
     isPaused: false

@@ -1,0 +1,103 @@
+/* Animation for certification cards */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.cert-card-float:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Shine effect */
+.cert-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-shine::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(to bottom right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: rotate(30deg);
+    transition: transform 0.5s;
+    pointer-events: none;
+}
+
+.cert-shine:hover::after {
+    transform: rotate(30deg) translate(100%, 100%);
+}
+
+/* Badge animation */
+@keyframes pulse-badge {
+    0% {
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(20, 184, 166, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+    }
+}
+
+.cert-badge-pulse {
+    animation: pulse-badge 2s infinite;
+}
+
+/* Custom styles for project cards with 3D effect + certification animations */
+
+/* Make the float animation work without interfering with the 3D rotation */
+.project-card-3d.cert-card-float:hover {
+    animation: float 3s ease-in-out infinite;
+    /* Disable float animation when using 3D tilt */
+}
+
+/* For project tags specifically */
+.project-tag-pulse {
+    animation: pulse-tag 4s infinite;
+    animation-delay: calc(var(--tag-index) * 0.5s);
+}
+
+
+/* Project tags specific animation */
+@keyframes pulse-tag {
+    0% {
+        box-shadow: 0 0 0 0 rgba(71, 254, 230, 0.2);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(63, 243, 219, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 221, 0);
+    }
+}
+.project-tag-pulse {
+    animation: pulse-tag 4s infinite;
+}
+.project-card-float {
+    transition: all 0.3s ease-out;
+}
+
+.project-card-float:hover {
+    animation: float 3s ease-in-out infinite;
+}

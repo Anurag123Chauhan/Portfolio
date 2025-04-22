@@ -75,13 +75,19 @@ const Contact = () => {
   }
 
   return (
-    <section id="Contact" className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+    <section
+      id="Contact"
+      className="py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-950"
+    >
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">Get In Touch</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
+            Get In Touch
+          </h2>
           <div className="w-20 h-1 bg-teal-500 mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind or just want to say hello? Feel free to reach out!
+            Have a project in mind or just want to say hello? Feel free to reach
+            out!
           </p>
         </div>
 
@@ -107,8 +113,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">Email</h3>
-                    <p className="text-gray-600 dark:text-gray-400">chauhananurag322@gmail.com</p>
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                      Email
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      chauhananurag322@gmail.com
+                    </p>
                   </div>
                 </div>
               </div>
@@ -138,8 +148,12 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">Location</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Baddi, Himachal Pradesh, India</p>
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                      Location
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      Baddi, Himachal Pradesh, India
+                    </p>
                   </div>
                 </div>
               </div>
@@ -163,17 +177,23 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="ml-4">
-                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">Phone</h3>
-                    <p className="text-gray-600 dark:text-gray-400">+91 9882060987</p>
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                      Phone
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-400">
+                      +91 9882060987
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="mt-10">
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Connect With Me</h3>
+              <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-4">
+                Connect With Me
+              </h3>
               <div className="flex space-x-4">
-                <a
+                {/* <a
                   href="https://www.facebook.com/profile"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -204,9 +224,9 @@ const Contact = () => {
                   >
                     <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                   </svg>
-                </a>
+                </a> */}
                 <a
-                  href="https://instagram.com/profile"
+                  href="https://www.instagram.com/anurag_______chauhan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
@@ -242,7 +262,11 @@ const Contact = () => {
           </div>
 
           <div>
-            <form ref={form} onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
+            <form
+              ref={form}
+              onSubmit={handleSubmit}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
+            >
               {isSubmitted ? (
                 <div className="bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 px-4 py-3 rounded-lg mb-6">
                   <div className="flex items-center">
@@ -262,7 +286,7 @@ const Contact = () => {
                   </div>
                 </div>
               ) : null}
-              
+
               {formError && (
                 <div className="bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 px-4 py-3 rounded-lg mb-6">
                   <div className="flex items-center">
@@ -286,7 +310,10 @@ const Contact = () => {
               <div className="grid gap-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Name
                     </label>
                     <input
@@ -295,14 +322,25 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"} focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
+                      className={`w-full px-4 py-3 rounded-lg border ${
+                        errors.name
+                          ? "border-red-500"
+                          : "border-gray-300 dark:border-gray-600"
+                      } focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
                       placeholder="Your name"
                     />
-                    {errors.name && <p className="mt-1 text-sm text-red-500 dark:text-red-400">{errors.name}</p>}
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.name}
+                      </p>
+                    )}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                    >
                       Email
                     </label>
                     <input
@@ -311,15 +349,26 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 rounded-lg border ${errors.email ? "border-red-500" : "border-gray-300 dark:border-gray-600"} focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
+                      className={`w-full px-4 py-3 rounded-lg border ${
+                        errors.email
+                          ? "border-red-500"
+                          : "border-gray-300 dark:border-gray-600"
+                      } focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
                       placeholder="Your email"
                     />
-                    {errors.email && <p className="mt-1 text-sm text-red-500 dark:text-red-400">{errors.email}</p>}
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
                     Subject
                   </label>
                   <input
@@ -334,7 +383,10 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+                  >
                     Message
                   </label>
                   <textarea
@@ -343,10 +395,18 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className={`w-full px-4 py-3 rounded-lg border ${errors.message ? "border-red-500" : "border-gray-300 dark:border-gray-600"} focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
+                    className={`w-full px-4 py-3 rounded-lg border ${
+                      errors.message
+                        ? "border-red-500"
+                        : "border-gray-300 dark:border-gray-600"
+                    } focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
                     placeholder="Your message"
                   ></textarea>
-                  {errors.message && <p className="mt-1 text-sm text-red-500 dark:text-red-400">{errors.message}</p>}
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500 dark:text-red-400">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <button
@@ -388,7 +448,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Contact

@@ -6,6 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Certification from './components/Certification';
 // import DevelopmentExperience from './components/development-experience';
 import Achievements from './components/Achievements';
 // import CommunityInvolvement from './components/community-involvement';
@@ -48,6 +49,9 @@ const App = () => {
             <Projects />
           </section>
           {/* <DevelopmentExperience /> */}
+          <section id="certification">
+            <Certification />
+          </section>
           <section id="Achievements">
             <Achievements />
           </section>

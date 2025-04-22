@@ -1,19 +1,20 @@
-import { useState, useEffect, useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import SurakshaImg from "../assets/Suraksha.jpeg"
-import WeatherImg from "../assets/Weather_app.jpeg"
-import N_queenImg from "../assets/N_queen.jpeg"
-import RayTracingImg from "../assets/RayTracing.jpeg"
+import { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import "./certifications.css"; // Import certification animations
+import SurakshaImg from "../assets/Suraksha.jpeg";
+import WeatherImg from "../assets/Weather_app.jpeg";
+import N_queenImg from "../assets/N_queen.jpeg";
+import RayTracingImg from "../assets/RayTracing.jpeg";
 
 const Projects = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeFilter, setActiveFilter] = useState("All")
-  const projectsRef = useRef(null)
-  const isInView = useInView(projectsRef, { once: false, amount: 0.1 })
+  const [isVisible, setIsVisible] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("All");
+  const projectsRef = useRef(null);
+  const isInView = useInView(projectsRef, { once: false, amount: 0.1 });
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
@@ -22,7 +23,7 @@ const Projects = () => {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   const staggerChildren = {
     hidden: { opacity: 0 },
@@ -32,7 +33,7 @@ const Projects = () => {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -45,7 +46,7 @@ const Projects = () => {
       y: -10,
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   const projects = [
     {
@@ -54,12 +55,18 @@ const Projects = () => {
       description:
         "A Disaster Management System that uses AI and maps API and chat section to provide real-time updates and resources during emergencies.",
       image: SurakshaImg,
-      tags: ["Sockets","MongoDB", "Machine Learning", "Node.js", "Tailwind CSS"],
+      tags: [
+        "Sockets",
+        "MongoDB",
+        "Machine Learning",
+        "Node.js",
+        "Tailwind CSS",
+      ],
       links: {
         source: "https://github.com/Anurag123Chauhan/Suraksha",
         demo: null,
       },
-      category: "AI",
+      category: "Web",
     },
     {
       id: 2,
@@ -70,7 +77,7 @@ const Projects = () => {
       tags: ["Angular", "Node.js", "MongoDB", "Tailwind CSS", "Bootstrap"],
       links: {
         source: "https://github.com/Anurag123Chauhan/PersonalPortfolio",
-        demo: "#",
+        demo: null,
       },
       category: "Web",
     },
@@ -83,7 +90,7 @@ const Projects = () => {
       tags: ["C++"],
       links: {
         source: "https://github.com/Anurag123Chauhan/N-Queen-Visualisation",
-        demo: "#",
+        demo: null,
       },
       category: "C++",
     },
@@ -96,34 +103,25 @@ const Projects = () => {
       tags: ["C++", "SDL2"],
       links: {
         source: "https://github.com/Anurag123Chauhan/Raytracing",
-        demo: "#",
+        demo: null,
       },
       category: "C++",
     },
-    // {
-    //   id: 5,
-    //   title: "Coding Shop - Devlang",
-    //   description:
-    //     "SRM Builds 4 project where users can create and manage communities, and host online workshops in coding and development fields.",
-    //   image: "/placeholder.svg?height=400&width=600",
-    //   tags: ["Next.js", "Firebase", "Tailwind CSS", "ShadCN"],
-    //   links: {
-    //     source: "#",
-    //     demo: null,
-    //   },
-    //   category: "Web",
-    // },
-  ]
+  ];
 
-  const filters = ["All", "Web", "AI", "C++"]
+  const filters = ["All", "Web", "C++"];
 
-  const filteredProjects = activeFilter === "All" ? projects : projects.filter((p) => p.category === activeFilter)
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <div className="relative min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden">
-      
-      {/* Content Container */}
-      <div className="container mx-auto px-4 py-20 z-10 relative">
+    <section
+      id="Projects"
+      className="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden"
+    >
+      <div className="container mx-auto px-4 max-w-6xl z-10 relative">
         <motion.div
           className="max-w-6xl mx-auto"
           initial="hidden"
@@ -131,25 +129,21 @@ const Projects = () => {
           variants={staggerChildren}
         >
           {/* Header */}
-          <motion.div className="text-center mb-16" variants={fadeIn}>
-            <motion.h1
-              className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-teal-500 to-teal-400 bg-clip-text text-transparent"
-              variants={fadeIn}
-            >
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-800 dark:text-gray-100">
               Projects
-            </motion.h1>
-            <motion.p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto" variants={fadeIn}>
+            </h2>
+            <div className="w-20 h-1 bg-teal-500 mx-auto mb-6"></div>
+            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               A showcase of my best work, personal projects, and contributions
-            </motion.p>
-            <motion.div
-              className="w-24 h-1 bg-gradient-to-r from-teal-500 to-teal-400 mx-auto mt-8"
-              initial={{ width: 0 }}
-              animate={{ width: "6rem", transition: { delay: 0.6, duration: 0.8 } }}
-            />
-          </motion.div>
+            </p>
+          </div>
 
           {/* Filter Buttons */}
-          <motion.div className="flex flex-wrap justify-center gap-4 mb-12" variants={staggerChildren}>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4 mb-12"
+            variants={staggerChildren}
+          >
             {filters.map((filter) => (
               <motion.button
                 key={filter}
@@ -185,10 +179,15 @@ const Projects = () => {
           <motion.div
             className="mt-16 text-center"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { delay: 1, duration: 0.8 } }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: { delay: 1, duration: 0.8 },
+            }}
           >
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Interested in seeing more of my work? Check out my GitHub repositories.
+              Interested in seeing more of my work? Check out my GitHub
+              repositories.
             </p>
             <motion.a
               href="https://github.com/Anurag123Chauhan"
@@ -216,37 +215,36 @@ const Projects = () => {
           </motion.div>
         </motion.div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-// Separate component for the project card with 3D tilt effect
 const ProjectCard = ({ project }) => {
-  const [rotation, setRotation] = useState({ x: 0, y: 0 })
-  const [isHovered, setIsHovered] = useState(false)
-  const cardRef = useRef(null)
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+  const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    if (!cardRef.current || !isHovered) return
+    if (!cardRef.current || !isHovered) return;
 
-    const card = cardRef.current
-    const rect = card.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const y = e.clientY - rect.top
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-    const centerX = rect.width / 2
-    const centerY = rect.height / 2
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
 
-    const rotateX = (y - centerY) / 20
-    const rotateY = (centerX - x) / 20
+    const rotateX = (y - centerY) / 20;
+    const rotateY = (centerX - x) / 20;
 
-    setRotation({ x: rotateX, y: rotateY })
-  }
+    setRotation({ x: rotateX, y: rotateY });
+  };
 
   const resetRotation = () => {
-    setRotation({ x: 0, y: 0 })
-    setIsHovered(false)
-  }
+    setRotation({ x: 0, y: 0 });
+    setIsHovered(false);
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -255,18 +253,20 @@ const ProjectCard = ({ project }) => {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <motion.div
       ref={cardRef}
-      className="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg"
+      className="relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg cert-shine cert-card-float"
       variants={cardVariants}
+      initial="hidden"
+      animate="visible"
       style={{
         transformStyle: "preserve-3d",
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${
-          isHovered ? 1.02 : 1
-        })`,
+        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${
+          rotation.y
+        }deg) scale(${isHovered ? 1.02 : 1})`,
         transition: "transform 0.2s ease-out",
       }}
       onMouseMove={handleMouseMove}
@@ -282,21 +282,30 @@ const ProjectCard = ({ project }) => {
           style={{ transform: `translateZ(20px)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <h3 className="absolute bottom-4 left-4 text-xl font-bold text-white" style={{ transform: `translateZ(30px)` }}>
+        <h3
+          className="absolute bottom-4 left-4 text-xl font-bold text-white"
+          style={{ transform: `translateZ(30px)` }}
+        >
           {project.title}
         </h3>
       </div>
 
       {/* Project Content */}
       <div className="p-6" style={{ transform: `translateZ(10px)` }}>
-        <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 h-24 overflow-hidden">{project.description}</p>
+        <p className="text-gray-700 dark:text-gray-300 text-sm mb-4 h-24 overflow-hidden">
+          {project.description}
+        </p>
 
-        {/* Tags */}
+        {/* Tags with pulsing effect */}
         <div className="flex flex-wrap gap-2 mb-6">
           {project.tags.map((tag, index) => (
             <span
               key={index}
-              className="text-xs px-2 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300"
+              className="text-xs px-2 py-1 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 project-tag-pulse"
+              style={{
+                "--tag-index": index,
+                animationDelay: `${index * 0.5}s`,
+              }}
             >
               {tag}
             </span>
@@ -306,10 +315,14 @@ const ProjectCard = ({ project }) => {
         {/* Action Buttons */}
         <div className="flex gap-4">
           {project.links.source && (
-            <a
+            <motion.a
               href={project.links.source}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
               style={{ transform: `translateZ(20px)` }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -326,13 +339,17 @@ const ProjectCard = ({ project }) => {
                 />
               </svg>
               Source Code
-            </a>
+            </motion.a>
           )}
           {project.links.demo && (
-            <a
+            <motion.a
               href={project.links.demo}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-teal-500 text-white text-sm font-medium hover:bg-teal-600 transition-colors"
               style={{ transform: `translateZ(20px)` }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -355,23 +372,12 @@ const ProjectCard = ({ project }) => {
                 />
               </svg>
               Live Demo
-            </a>
+            </motion.a>
           )}
         </div>
       </div>
-
-      {/* Shine effect on hover */}
-      {isHovered && (
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.03) 60%, rgba(255,255,255,0) 100%)",
-          }}
-        ></div>
-      )}
     </motion.div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
