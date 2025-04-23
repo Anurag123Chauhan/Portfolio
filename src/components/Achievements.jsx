@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Trophy, Award, Medal } from "lucide-react";
+import { Trophy, Award } from "lucide-react";
 import RankImg from "../assets/rank.jpeg";
 import InfImg from "../assets/infinion.jpeg";
 
@@ -75,82 +75,28 @@ const Achievements = () => {
       hasMore: false,
       links: [],
     },
-    // {
-    //   id: 3,
-    //   title: "2nd Prize - Documentary Making Competition",
-    //   description: "Secured 2nd place in the documentary-making competition held by the Environmental Department.",
-    //   image: "/placeholder.svg?height=400&width=600",
-    //   icon: <Medal className="h-6 w-6 text-teal-500" />,
-    //   hasMore: true,
-    // },
-    // {
-    //   id: 4,
-    //   title: "3rd Prize - Apogee 2025 BITS Pilani",
-    //   description:
-    //     "Achieved 3rd place in the Moneyball event at Apogee 2025, showcasing analytical and financial skills.",
-    //   image: "/placeholder.svg?height=400&width=600",
-    //   icon: <Award className="h-6 w-6 text-blue-500" />,
-    //   hasMore: true,
-    // },
   ];
+
+  // Simplified background without lighting effects
+  const renderSimpleBackground = () => (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Minimal subtle pattern */}
+      <div
+        className="absolute inset-0 opacity-5 dark:opacity-10"
+        style={{
+          backgroundImage:
+            'url(\'data:image/svg+xml,%3Csvg width="20" height="20" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M0 0h20v20H0V0zm2 2v16h16V2H2z" fill="%23000" fill-opacity=".05"/%3E%3C/svg%3E\')',
+          backgroundPosition: "0 0",
+          backgroundSize: "20px 20px",
+        }}
+      ></div>
+    </div>
+  );
 
   return (
     <div className="relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-hidden py-20">
-      {/* Background effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main gradient blobs */}
-        <motion.div
-          className="absolute top-0 right-0 w-1/3 h-1/3 bg-gradient-to-b from-teal-500/10 to-transparent rounded-bl-full blur-3xl"
-          style={{ willChange: "transform" }}
-          animate={{
-            x: ["var(--mouse-x, 0px)", "calc(var(--mouse-x, 0px) * -1)"],
-            y: ["var(--mouse-y, 0px)", "calc(var(--mouse-y, 0px) * -1)"],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Number.POSITIVE_INFINITY,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-gradient-to-t from-teal-500/10 to-transparent rounded-tr-full blur-3xl"
-          style={{ willChange: "transform" }}
-          animate={{
-            x: ["calc(var(--mouse-x, 0px) * -1)", "var(--mouse-x, 0px)"],
-            y: ["calc(var(--mouse-y, 0px) * -1)", "var(--mouse-y, 0px)"],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Number.POSITIVE_INFINITY,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
-        />
-        {/* Floating particles */}
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-teal-500/20"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              willChange: "transform, opacity",
-            }}
-            animate={{
-              y: [0, Math.random() * 30 - 15],
-              x: [0, Math.random() * 30 - 15],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: Math.random() * 8 + 12,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {/* Simple Background */}
+      {renderSimpleBackground()}
 
       {/* Content Container */}
       <div className="container mx-auto px-4 z-10 relative">

@@ -7,6 +7,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Certification from './components/Certification';
+import Video from './components/video';
 // import DevelopmentExperience from './components/development-experience';
 import Achievements from './components/Achievements';
 // import CommunityInvolvement from './components/community-involvement';
@@ -55,6 +56,7 @@ const App = () => {
           <section id="Achievements">
             <Achievements />
           </section>
+          <Video />
           {/* <CommunityInvolvement /> */}
           <section id="Contact">
             <Contact />
