@@ -62,6 +62,26 @@
     animation: pulse-badge 2s infinite;
 }
 
+/* Description transition */
+.description-container {
+    position: relative;
+    width: 100%;
+    min-height: 2.5rem;
+}
+
+.description-truncated {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.description-expanded {
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
 /* Custom styles for project cards with 3D effect + certification animations */
 
 /* Make the float animation work without interfering with the 3D rotation */
@@ -91,9 +111,11 @@
         box-shadow: 0 0 0 0 rgba(0, 255, 221, 0);
     }
 }
+
 .project-tag-pulse {
     animation: pulse-tag 4s infinite;
 }
+
 .project-card-float {
     transition: all 0.3s ease-out;
 }
