@@ -336,7 +336,7 @@ const About = () => {
                   passionate developer
                 </span>{" "}
                 and problem-solver with expertise across the full stack. My
-                journey began with C++ in high school, where I quickly
+                journey began with Python in high school, where I quickly
                 discovered my fascination with turning logic into{" "}
                 <span className="italic bg-teal-50 dark:bg-teal-900/20 px-1 rounded">
                   functional applications that solve real-world challenges
